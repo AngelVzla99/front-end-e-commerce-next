@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {TextField, Button} from '@material-ui/core';
 import Image from 'next/image';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import {useRouter} from 'next/router';
+import {useToken} from 'context/tokenContext';
 
 export default function MenuComponent() {
   const [searchText, setSearchText] = useState('');
   const router = useRouter();
+  const {token} = useToken();
 
   const handleLogoClick = () => {
     router.push('/');
@@ -60,7 +62,7 @@ export default function MenuComponent() {
       <div style={{display: 'flex'}}>
         {/* User info or login */}
         <Button style={{width: '120px'}} onClick={handleLoginClick}>
-          Login
+          {token ? 'Welcome' : 'Login'}
         </Button>
         {/* Cart */}
         <Button style={{width: '120px'}} onClick={handleCartClick}>

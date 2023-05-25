@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {Box, Button, TextField, Typography} from '@material-ui/core';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import useAuth from 'hooks/auth.hook';
 import {useRouter} from 'next/router';
+import Link from 'next/link';
+import {useToken} from 'context/tokenContext';
 
 const stringRegister = "Don't have an account?";
 
@@ -12,13 +13,15 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
   const [error, setError] = useState('');
-  const {login, data} = useAuth();
+  // const {setToken} = useContext(TokenContext);
+  const {saveToken} = useToken();
 
   const handleSubmit = async () => {
     try {
-      await login(username, password);
+      // save the token in the context
+      await saveToken(username, password);
       router.push('/');
-    } catch (error: any) {
+    } catch (error) {
       setError("Username or password doesn't match");
     }
   };
@@ -80,10 +83,7 @@ export default function Login() {
         </Button>
         {/* Register link */}
         <Typography variant='body1' component='p'>
-          {stringRegister}{' '}
-          <a href='/register' style={{color: 'var(--color-text-primary)'}}>
-            Register
-          </a>
+          {stringRegister} <Link href='/register'>Register</Link>
         </Typography>
         {/* Error message */}
         {error && (
