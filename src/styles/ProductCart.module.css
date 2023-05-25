@@ -1,0 +1,42 @@
+.blackButton {
+  position: relative;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  /* a colo */
+  background-color: #272727;
+  color: #ffffff;
+  border: 1px solid #000000;
+  margin-top: 5px;
+}
+
+.blackButton:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.blackButton:after {
+  content: '';
+  background: #272727;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.blackButton:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}

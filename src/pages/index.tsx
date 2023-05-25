@@ -1,26 +1,29 @@
-import React, { useEffect } from 'react'
-import useHome from '../hooks/home.hook'
-import Carousel from 'components/Carousel/Carousel'
-import ProductCarousel from 'components/ProductCarousel/ProductCarousel'
+import React, {useEffect} from 'react';
+import useHome from '../hooks/home.hook';
+import ProductCarousel from 'components/ProductCarousel/ProductCarousel';
+import ImagesCarousel from 'components/ImagesCarousel/ImagesCarousel';
 
 export default function Index() {
-  const { data, loading, error, fetchHomeData } = useHome()
+  const {data, loading, error, fetchHomeData} = useHome();
 
   useEffect(() => {
-    console.log('data', data)
-  }, [data])
+    console.log('data', data);
+  }, [data]);
 
   return (
-    <div style={{padding:'80px 0px'}}>
+    <div>
+      <ImagesCarousel urls={data?.bannerUrls || []} />
 
       <div style={{padding: '0px 200px'}}>
-        <ProductCarousel title='Best deals' products={data?.bestDeals||[]} />
+        <ProductCarousel title='Best deals' products={data?.bestDeals || []} />
       </div>
 
       <div style={{padding: '80px 200px'}}>
-        <ProductCarousel title='Most bought' products={data?.mostBought||[]} />
+        <ProductCarousel
+          title='Most bought'
+          products={data?.mostBought || []}
+        />
       </div>
-
     </div>
-  )
+  );
 }

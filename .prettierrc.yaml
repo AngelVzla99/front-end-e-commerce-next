@@ -1,0 +1,7 @@
+# See https://prettier.io/docs/en/options.html for all the available options
+# and their default values
+
+singleQuote: true
+jsxSingleQuote: true
+bracketSpacing: false
+arrowParens: 'avoid'
