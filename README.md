@@ -21,6 +21,15 @@ $ npm install
 $ npm run dev
 ```
 
+## Running on docker container
+
+Requires docker installed
+
+```sh
+$ docker build -t front-e-commerce
+$ docker run -p 3000:3000 front-e-commerce
+```
+
 ## Images of the pages
 
 In this section we will see al the pages available in the project and a simple explanation of each one of them
