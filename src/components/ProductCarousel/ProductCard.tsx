@@ -21,22 +21,23 @@ export default function ProductCard(product: Product) {
         boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.25)',
         cursor: 'pointer',
       }}
-      onClick={handleClick}
     >
-      <img
-        src={product.photoUrlSmall}
-        alt={product.name}
-        height={150}
-        style={{marginBottom: '10px'}}
-      />
-      <Typography variant='h6' component='h2'>
-        {product.name}
-      </Typography>
-      <Typography variant='body1' component='p'>
-        Price: {product.price}
-      </Typography>
-      {/* Black button when the mouse is over it change the color */}
-      <ButtonAddToCart />
+      <div onClick={handleClick}>
+        <img
+          src={product.photoUrlSmall}
+          alt={product.name}
+          height={150}
+          style={{marginBottom: '10px'}}
+        />
+        <Typography variant='h6' component='h2'>
+          {product.name}
+        </Typography>
+        <Typography variant='body1' component='p'>
+          Price: {product.price}
+        </Typography>
+        {/* Black button when the mouse is over it change the color */}
+      </div>
+      <ButtonAddToCart productId={product.id} />
     </div>
   );
 }

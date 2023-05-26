@@ -6,10 +6,6 @@ import ImagesCarousel from 'components/ImagesCarousel/ImagesCarousel';
 export default function Index() {
   const {data, loading, error, fetchHomeData} = useHome();
 
-  useEffect(() => {
-    console.log('data', data);
-  }, [data]);
-
   return (
     <div>
       <ImagesCarousel urls={data?.bannerUrls || []} />

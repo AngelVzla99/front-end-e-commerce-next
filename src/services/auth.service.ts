@@ -13,7 +13,6 @@ export const login = async (
 
   if (response.status !== 200) throw new Error(response.data);
   else {
-    console.log('I will set the token => ', response.data);
     return response.data;
   }
 };

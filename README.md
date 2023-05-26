@@ -20,3 +20,29 @@ Requires npm installed
 $ npm install
 $ npm run dev
 ```
+
+## Images of the pages
+
+In this section we will see al the pages available in the project and a simple explanation of each one of them
+
+### Main
+
+![Main image](./public/screenshots/main.png)
+
+### Product detail
+
+![Product detail image](./public/screenshots/productDetail.png)
+
+### Items in the cart
+
+![Cart](./public/screenshots/cart.png)
+
+### Login and register
+
+![plot](./public/screenshots/login.png)
+![plot](./public/screenshots/register.png)
+
+### Search view
+
+![plot](./public/screenshots/search.png)
+![plot](./public/screenshots/search2.png)

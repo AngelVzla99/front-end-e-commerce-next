@@ -40,7 +40,7 @@ export default function Register() {
         router.push('/');
       }
     } catch (error) {
-      console.log('I reach this point');
+      // this is handled in the hook
     }
   };
 
@@ -84,7 +84,7 @@ export default function Register() {
             endAdornment: (
               <Button
                 onClick={() => setShowPassword(!showPassword)}
-                style={{color: 'var(--color-text-primary)'}}
+                style={{color: 'var(rimary)'}}
               >
                 <RemoveRedEyeIcon />
               </Button>

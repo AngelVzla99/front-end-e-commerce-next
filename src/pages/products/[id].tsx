@@ -18,10 +18,6 @@ interface Props {
 }
 
 export default function ProductComponent({product}: Props) {
-  const handleAddToCart = () => {
-    console.log('Add to cart');
-  };
-
   return (
     <Card style={{display: 'flex', padding: '50px'}}>
       <div
@@ -51,7 +47,7 @@ export default function ProductComponent({product}: Props) {
             Price: {product.price}
           </Typography>
           <div style={{width: '400px'}}>
-            <ButtonAddToCart />
+            <ButtonAddToCart productId={product.id} />
           </div>
         </CardContent>
       </div>

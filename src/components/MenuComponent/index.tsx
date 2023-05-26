@@ -11,6 +11,7 @@ export default function MenuComponent() {
   const {token} = useToken();
 
   const handleLogoClick = () => {
+    setSearchText('');
     router.push('/');
   };
 
@@ -19,8 +20,17 @@ export default function MenuComponent() {
   };
 
   const handleCartClick = () => {
-    console.log('Cart clicked');
+    router.push('/cart');
   };
+
+  useEffect(() => {
+    if (searchText) {
+      router.push(`/search?query=${searchText}`);
+    } else {
+      router.push('/');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchText]);
 
   return (
     <div
@@ -30,7 +40,7 @@ export default function MenuComponent() {
         backgroundColor: 'white',
         cursor: 'pointer',
         borderBottom: '1px solid grey',
-        height: '64px',
+        height: '70px',
         position: 'fixed',
         top: 0,
         left: 0,
@@ -54,9 +64,13 @@ export default function MenuComponent() {
       {/* Search bar */}
       <TextField
         label='Search'
-        variant='standard'
+        variant='filled'
+        size='small'
+        style={{width: '50%', marginTop: '10px'}}
         value={searchText}
         onChange={e => setSearchText(e.target.value)}
+        // remove animation
+        InputProps={{disableUnderline: true}}
       />
 
       <div style={{display: 'flex'}}>
