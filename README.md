@@ -2,7 +2,7 @@
 
 This is the front-end of an e-commerce web application made in NEXT.js the back-end can be found here [Back-end in spring boot (Java)](https://github.com/AngelVzla99/backend-e-commerce-spring)
 
-You can see the project in the following [link](https://angel-garces-front-end-e-commerce.onrender.com)
+You can see the project in the following [link (wait 2 minutes and refresh)](https://angel-garces-front-end-e-commerce.onrender.com)
 
 # Technology
 
